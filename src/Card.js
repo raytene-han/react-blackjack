@@ -1,16 +1,9 @@
-import axios from "axios";
-import Card from "./Card";
+function Card({image}) {
 
-const BASE_URL = "https://deckofcardsapi.com/api/deck/";
-
-async function drawCard(deckId) {
-  const cardRes = await axios.get(`${BASE_URL}${deckId}/draw/?count=1`);
-  return cardRes.cards[0];
+  return(
+    <div><img src={image} /></div>
+  )
+  
 }
 
-
-async function Card({deckId}) {
-
-  const card = await drawCard(deckId);
-
-}
+export default Card;
